@@ -18,8 +18,8 @@ let lastName = prompt("What is your last name?", "")
 alert(`What's up ${firstName} ${lastName}?`)
 
 //3
-let x = prompt("What's your first value?", 22)
-let y = prompt("What's your second value?", 30)
+let x = +prompt("What's your first value?", 22)
+let y = +prompt("What's your second value?", 30)
 
 alert(x * y)
 alert(x - y)
@@ -69,7 +69,7 @@ if (str.search(str2) > -1) {
     alert("You don't like to learn Front-end")
 }
 
-let result = alert(`Мне нравится изучать ${str2}`)
+alert(`Мне нравится изучать ${str2}`)
 
 //Условные и логические операторы
 //1
@@ -271,29 +271,27 @@ for (let i = 1; i <= 9; i++) {
 
 
 //8
-function fib(n) {
-    let a = 1;
-    let b = 1;
-    for (let i = 3; i <= n; i++) {
-        let c = a + b;
-        a = b;
-        b = c;
-    }
-    return b;
-}
+let str = '';
+const strLength = 13;
+
+for (let i = 0, j = 1; i <= strLength; str += i + ' ', [i, j] = [j, i + j]);
+
+console.log(str);
 
 //9
-var amount = 0;
-for (var i = 0; ; i++) {
-    var user = +prompt("Введите число");
-    if (user) {
-        var amount = +amount + user;
+let amount = 0;
+let i;
+
+for (i = 0; ; i++) {
+    let num = +prompt("Введите число");
+    if (num) {
+        amount = +amount + num;
         continue;
     } else {
         break;
     }
 }
-var average = amount / i;
+let average = amount / i;
 console.log(i);
 console.log(amount);
 console.log(average);
