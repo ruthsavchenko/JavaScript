@@ -97,7 +97,6 @@ true, если объект objectRelation имеет enabled: true. Если
 // console.log(result)
 
 
-
 //7. Необходимо сформировать массив полей в котором будет изменен ключ edit на true, в том случае когда у нас view тоже true
 
 // for (let i = 0; i < fields.length; i++) {
