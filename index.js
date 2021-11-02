@@ -75,36 +75,33 @@
 // console.log(result)
 
 
-//map
-// let result = {}
-// objects.map(item => {
-//     let year = item.date.split('-')[2]
-//     result[year] = {};
-//     objects.map(item2 => {
-//         if (item2.date.split('-')[2] === year) {
-//             let month = item2.date.split('-')[1]
-//             result[year][month] = [];
-//             objects.map(item3 => {
-//                 if (item3.date.split('-')[2] === year && item3.date.split('-')[1] === month) {
-//                     result[year][month].push(item3)
-//                 }
-//             }) 
-//         }
-//     }) 
-// })
+//4 Необходимо получить массив объектов которым необходимо заменить relationId на полный объект данных.
+
+//for
+// let result = [];
+// for (let i = 0; i < objects.length; i++){
+//     if (objects[i].relation){
+//         objects[i].relation.relationId = objects[objects[i].relation.relationId - 1];
+//         result.push(objects[i]);
+//     } else {
+//         result.push(objects[i])
+//     }
+// }
 
 // console.log(result)
 
 
-//4 Необходимо получить массив объектов которым необходимо заменить relationId на полный объект данных.
-
-// let result = [];
-// for (let i = 0; i < objects.length; i++){
-//     if (objects[i].relation){
-//         objects[i].relation.relationId = objects[objects[i].relation.relationId];
-//         result.push(objects[i]);
+//map
+// let result = objects.map(item => {
+//     if(item.relation) {
+//         const obj = objects.find(x => x.id === item.relation.relationId)
+//         return {
+//             ...item, relation: obj
+//         }
+//     } else {
+//         return item
 //     }
-// }
+// })
 
 // console.log(result)
 
@@ -127,33 +124,20 @@
 
 //6 Необходимо получить объект в котором сформировать данные по relation объектам.
 
-//for
+// for
 // let result = {}
 // for (let i = 0; i < objects.length; i++) {
 //     if (objects[i].relation) {
-//         result[objects[i].relation.relationId] = [];
-//         for (let j = 0; j < objects.length; j++) {
-//             if (objects[j].relation && objects[j].relation.relationId == objects[i].relation.relationId) {
-//                 (result[objects[i].relation.relationId]).push(objects[j])
-//             }
+//         const realtionId = objects[i].relation.relationId;
+//         let relationObj = result[realtionId]
+
+//         if(relationObj) {
+//             result[realtionId].push(objects[i])
+//         } else {
+//             result[realtionId] = [objects[i]];
 //         }
 //     }
 // }
-
-// console.log(result)
-
-//map
-// let result = {}
-// objects.map(item => {
-//     if (item.relation) {
-//         result[item.relation.relationId] = [];
-//         objects.map(value => {
-//             if (value.relation && value.relation.relationId == item.relation.relationId) {
-//                 (result[item.relation.relationId]).push(value)
-//             }
-//         })
-//     }
-// })
 
 // console.log(result)
 
@@ -163,9 +147,9 @@
 //         const realtionId = item.relation.relationId;
 //         const relationObj = acc[item.relation.relationId]
 
-//         if(item.realtion) {
+//         if(relationObj) {
 //             return {
-//                 ...acc, [realtionId]: [...acc[relationObj], item]
+//                 ...acc, [realtionId]: [...acc[realtionId], item]
 //             }
 //         } else {
 //             return {
@@ -194,7 +178,12 @@
 //map
 // let result = []
 // objects.map(item => {
-//     item.date.split('-')[2] === '2020' ? (item.enabled = true) && result.push(item) : item
+//     if (item.date.split('-')[2] === '2020') {
+//         result.push(item)
+//         return (item.enabled = true)
+//     } else {
+//         return item
+//     }
 // })
 
 // console.log(result)
