@@ -32,14 +32,9 @@ d. Найдите и удалите из массива значение ‘jQue
 // arr.unshift('Backbone.js');
 // arr.push('ReactJS', 'Vue.js')
 // arr.splice(1, 0, "CommonJS");
-// let index = arr.indexOf('jQuery');
-
-// for (let i = 0; i < arr.length; i++) {
-//     if (arr[i] === 'jQuery') {
-//         alert(arr[i] + ' - Это здесь лишнее');
-//         delete arr[i];
-//     }
-// }
+// console.log(arr.indexOf('jQuery'));
+// let jQuery = arr.slice(3, 4);
+// alert(`${jQuery} - то здесь лишнее`);
 
 // console.log(arr)
 
@@ -55,9 +50,14 @@ splice ...). Затем объедините элементы массива в 
 // let lastWord = arr.pop();
 
 // arr.splice(5, 0, lastWord)
-// str = arr.join(' ')
+// let word1 = arr.splice(3, 1, 'однажды');
+// let word2 = arr.splice(1, 1, 'Жак')
+// let word3 = arr.splice(2, 1, 'звонарь')
 
-// console.log(arr)
+// let newStr = arr.join(' ')
+
+// alert(`Старая строка: ${str}`)
+// alert(`Новая строка: ${newStr}`)
 
 
 /*5 Создайте ассоциативный массив person, описывающий персону, с
